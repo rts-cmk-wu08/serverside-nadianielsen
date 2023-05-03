@@ -11,7 +11,7 @@ const NavBar = () => {
     // const handleMenuToggle = () => setIsOpen(!isOpen)
 
     return ( 
-        <nav className="flex justify-center py-6 pr-20 text-center dark:text-white">
+        <nav className="flex justify-center py-6 pr-20 text-center">
             <div className="flex gap-x-10">
             <Link href={"/"}>Home</Link>
             <Link href={"/"}>About</Link>

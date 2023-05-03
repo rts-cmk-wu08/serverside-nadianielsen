@@ -16,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`dark:bg-black ${dmSans.className}`}>
+      <body className={`bg-[#FAF6F5] dark:bg-black dark:text-white ${dmSans.className}`}>
         <PageWrapper>
         <Header />
         {children}

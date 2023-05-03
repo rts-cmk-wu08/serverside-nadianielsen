@@ -1,9 +1,93 @@
+import Image from "next/image"
+import { FaTruck } from "react-icons/fa"
+import { AiOutlineShopping } from "react-icons/ai"
+import { MdCardGiftcard } from "react-icons/md"
 
-export default function Home() {
+const getStarted = async () => {
+  const result = await fetch ("https://swanky-api.onrender.com/started", {next: {revalidate: 30}})
+
+  if(!result.ok) { throw new Error("Failed to fetch data")}
+
+  return result.json()
+}
+ 
+const getOffers = async () => {
+  const result = await fetch ("https://swanky-api.onrender.com/offers", {next: {revalidate: 30}})
+
+  if(!result.ok) { throw new Error("Failed to fetch data")}
+
+  return result.json()
+}
+ 
+const getProducts = async () => {
+  const result = await fetch ("https://swanky-api.onrender.com/products", {next: {revalidate: 30}})
+
+  if(!result.ok) { throw new Error("Failed to fetch data")}
+
+  return result.json()
+}
+ 
+
+
+export default async function Home() {
+
+  const starteds = await getStarted()
+  const offers = await getOffers()
+  const products = await getProducts()
+
   return (
-    <main className="">
-      <div className="w-full h-[58rem] bg-black"></div>
-        <h1>home page</h1>
+    <main className="mb-4 flex flex-col">
+      <div className="w-full h-[42rem] bg-[#F1E4E1] relative">
+        <Image src="/mindy-sabiston-4fy6N_ijF7U-unsplash.jpg" width={1000} height={1000} className="absolute w-full h-full object-cover opacity-80" alt="Orange beanie"/>
+        {offers.map((offer, index) => {
+          if (index < 1 ) return (
+            <div className="flex justify-end flex-col items-end absolute mt-44">
+              <h1 className="text-5xl font-bold pr-32">{offer.headline}</h1>
+              <p className="w-[30%] pr-14 text-neutral-800">{offer.text}</p>
+            </div>
+          ) 
+        })}
+      </div>
+       <article className="flex justify-center flex-col items-center my-10">
+          <h2 className="capitalize font-bold text-3xl">Our products</h2>
+          <div className="flex gap-x-4 my-2">
+            <h3 className="font-bold text-[#737373] hover:text-black transition-all capitalize">Trending now</h3>
+            <h3 className="font-bold text-[#737373] hover:text-black transition-all capitalize">New arrivals</h3>
+            <h3 className="font-bold text-[#737373] hover:text-black transition-all capitalize">Best sellers</h3>
+          </div>
+          <article className="grid grid-cols-4 gap-4 my-6">
+            {products.map(product => (
+              <article>
+              <div className="w-[21rem] h-[26rem] bg-neutral-300"></div>
+              <div className="flex flex-col justify-center items-center mt-1">
+                <h3 className="hover:underline font-bold text-xl">{product.name}</h3>
+                <p className="text-[#EC6C5A]">${product.price}.00</p>
+              </div>
+              </article>
+            ))}
+          </article>
+          <button className="capitalize text-white bg-black px-12 py-2 my-4">Shop all</button>
+          <article className="grid grid-cols-2 mx-10">
+            <div className="w-[44rem] h-[42rem] bg-black"></div>
+              <article>
+                {starteds && (
+                  <div>
+                    <h2 className="text-4xl w-[50%] font-bold pt-16">{starteds.headline}</h2>
+                    <p className="w-[80%] pt-5">{starteds.text}</p>
+                  </div>
+            )}
+            {starteds.bullets.map(bullet => (
+              <div>
+                <h3 className="pt-12 font-semibold text-xl">{bullet.name}</h3>
+              </div>
+            ))} 
+            <FaTruck />
+            <AiOutlineShopping />
+            <MdCardGiftcard />
+              </article>
+           
+          </article>
+       </article>
     </main>
   )
 }
