@@ -10,7 +10,7 @@ const Footer = () => {
                 <Link href={"/"} className="font-semibold text-2xl">SWANKY.</Link>
                 <p className="w-52">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A perspiciatis maxime nulla, ipsa aperiam amet.</p>
                 <div className="flex">
-                    <input type="email" name="email" id="email" className="bg-transparent border-b-2 border-black w-60" placeholder="Enter your email address..."/>
+                    <input type="email" name="email" id="email" className="bg-transparent border-b-2 border-black w-60 dark:border-white" placeholder="Enter your email address..."/>
                     <IoSendSharp className="relative right-5 top-1 text-[#EC6C5A]"/>
                 </div>
                 <div className="flex text-xl gap-x-3 text-[#C0BAB9]">

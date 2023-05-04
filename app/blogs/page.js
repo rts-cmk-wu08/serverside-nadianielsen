@@ -26,13 +26,13 @@ const Blogs = async () => {
                     <Link href={"/blogs"} className="underline">Blog</Link>
                 </div>
             </div>
-            <article className="grid grid-cols-3 grid-rows-2 gap-y-5" >
+            <article className="grid grid-cols-3 grid-rows-2 gap-y-5 my-8" >
                 {posts.map(post => (
                     <Link href={`/blogs/${post.id}`} className="mx-4">
                         <div className="w-[30rem] h-[24rem] bg-neutral-300"> 
                         </div>
-                        <h2>{post.title}</h2>
-                        <p>{post.subtitle}</p>
+                        <h2 className="font-bold text-xl text-center pt-4">{post.title}</h2>
+                        <p className="text-center text-[#737373]">{post.subtitle}</p>
                         
                     </Link>
                 ))}

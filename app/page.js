@@ -43,7 +43,7 @@ export default async function Home() {
           if (index < 1 ) return (
             <div className="flex justify-end flex-col items-end absolute mt-44">
               <h1 className="text-5xl font-bold pr-32">{offer.headline}</h1>
-              <p className="w-[30%] pr-14 text-neutral-800">{offer.text}</p>
+              <p className="w-[30%] pr-14 text-neutral-800 dark:text-white">{offer.text}</p>
             </div>
           ) 
         })}
@@ -51,9 +51,9 @@ export default async function Home() {
        <article className="flex justify-center flex-col items-center my-10">
           <h2 className="capitalize font-bold text-3xl">Our products</h2>
           <div className="flex gap-x-4 my-2">
-            <h3 className="font-bold text-[#737373] hover:text-black transition-all capitalize">Trending now</h3>
-            <h3 className="font-bold text-[#737373] hover:text-black transition-all capitalize">New arrivals</h3>
-            <h3 className="font-bold text-[#737373] hover:text-black transition-all capitalize">Best sellers</h3>
+            <h3 className="font-bold text-[#737373] hover:text-black hover:underline transition-all capitalize dark:text-white dark:hover:text-neutral-300">Trending now</h3>
+            <h3 className="font-bold text-[#737373] hover:text-black hover:underline transition-all capitalize dark:text-white dark:hover:text-neutral-300">New arrivals</h3>
+            <h3 className="font-bold text-[#737373] hover:text-black hover:underline transition-all capitalize dark:text-white dark:hover:text-neutral-300">Best sellers</h3>
           </div>
           <article className="grid grid-cols-4 gap-4 my-6">
             {products.map(product => (
@@ -67,8 +67,8 @@ export default async function Home() {
             ))}
           </article>
           <button className="capitalize text-white bg-black px-12 py-2 my-4">Shop all</button>
-          <article className="grid grid-cols-2 mx-10">
-            <div className="w-[44rem] h-[42rem] bg-black"></div>
+          <article className="grid grid-cols-2 mx-10 my-16">
+            <div className="w-[44rem] h-[42rem] bg-black dark:bg-neutral-200"></div>
               <article>
                 {starteds && (
                   <div>
@@ -77,13 +77,16 @@ export default async function Home() {
                   </div>
             )}
             {starteds.bullets.map(bullet => (
-              <div>
-                <h3 className="pt-12 font-semibold text-xl">{bullet.name}</h3>
+              <div className="ml-12 mt-10">
+                <h3 className="flex flex-col gap-y-10 font-semibold text-xl ">{bullet.name}</h3>
+                <p className="text-[#737373]">{bullet.text}</p>
               </div>
             ))} 
-            <FaTruck />
-            <AiOutlineShopping />
-            <MdCardGiftcard />
+            <div className="text-4xl flex flex-col gap-y-14 relative bottom-60 text-[#EC6C5A]">
+              <FaTruck />
+              <AiOutlineShopping />
+              <MdCardGiftcard />
+            </div>
               </article>
            
           </article>

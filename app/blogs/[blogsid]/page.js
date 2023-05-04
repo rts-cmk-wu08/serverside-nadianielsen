@@ -19,7 +19,7 @@ const BlogDetail = async ({params: {blogsid}}) => {
 
     return ( 
         <main className="flex flex-col">
-            <div className="w-full h-[14rem] bg-[#F1E4E1] flex flex-col justify-center items-center">
+            <div className="w-full h-[14rem] dark:bg-neutral-200 bg-[#F1E4E1] flex flex-col justify-center items-center">
             <h1 className="text-4xl capitalize font-bold">Blog detail</h1>
                 <div className="flex gap-x-2 pt-4">
                     <Link href={"/"}>Home</Link>
