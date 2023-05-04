@@ -5,8 +5,8 @@ const Contact = () => {
     return ( 
         <main className="flex flex-col">
             <div className="w-full h-[22rem] bg-neutral-300 flex flex-col justify-center items-center">
-            <h1 className="text-4xl font-bold">Contact</h1>
-                <div className="flex gap-x-2 pt-4">
+            <h1 className="text-4xl font-bold text-white">Contact</h1>
+                <div className="flex gap-x-2 pt-4 text-white">
                 <Link href={"/"}>Home</Link>
                     <IoIosArrowForward className="mt-[0.3rem]"/>
                 <Link href={"/contact"} className="underline">Contact</Link>

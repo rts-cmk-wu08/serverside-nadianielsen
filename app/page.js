@@ -41,9 +41,10 @@ export default async function Home() {
         <Image src="/mindy-sabiston-4fy6N_ijF7U-unsplash.jpg" width={1000} height={1000} className="absolute w-full h-full object-cover opacity-80" alt="Orange beanie"/>
         {offers.map((offer, index) => {
           if (index < 1 ) return (
-            <div className="flex justify-end flex-col items-end absolute mt-44">
+            <div className="flex flex-col items-end my-44 relative gap-y-4">
               <h1 className="text-5xl font-bold pr-32">{offer.headline}</h1>
-              <p className="w-[30%] pr-14 text-neutral-800 dark:text-white">{offer.text}</p>
+              <p className="w-[30%] pr-20 text-neutral-800 dark:text-white">{offer.text}</p>
+              <button className="bg-black w-32 h-10 text-white mr-[20.8rem]">Shop now</button>
             </div>
           ) 
         })}
