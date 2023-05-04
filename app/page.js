@@ -38,7 +38,7 @@ export default async function Home() {
   return (
     <main className="mb-4 flex flex-col">
       <div className="w-full h-[42rem] bg-[#F1E4E1] relative">
-        <Image src="/mindy-sabiston-4fy6N_ijF7U-unsplash.jpg" width={1000} height={1000} className="absolute w-full h-full object-cover opacity-80" alt="Orange beanie"/>
+        <Image src="/charlesdeluvio-GsKf0FXVj3Y-unsplash.jpg" width={1000} height={1000} className="absolute w-full h-full object-cover" alt="Orange beanie"/>
         {offers.map((offer, index) => {
           if (index < 1 ) return (
             <div className="flex flex-col items-end my-44 relative gap-y-4">
@@ -57,9 +57,11 @@ export default async function Home() {
             <h3 className="font-bold text-[#737373] hover:text-black hover:underline transition-all capitalize dark:text-white dark:hover:text-neutral-300">Best sellers</h3>
           </div>
           <article className="grid grid-cols-4 gap-4 my-6">
-            {products.map(product => (
+            {products.map((product, index) => (
               <article>
-              <div className="w-[21rem] h-[26rem] bg-neutral-300"></div>
+              <div className="w-[21rem] h-[26rem] bg-neutral-300 relative">
+                <Image width={1000} height={1000} src={`/image-${index}.jpg`} className="absolute object-cover w-full h-full"/>
+              </div>
               <div className="flex flex-col justify-center items-center mt-1">
                 <h3 className="hover:underline font-bold text-xl">{product.name}</h3>
                 <p className="text-[#EC6C5A]">${product.price}.00</p>
@@ -69,7 +71,9 @@ export default async function Home() {
           </article>
           <button className="capitalize text-white bg-black px-12 py-2 my-4">Shop all</button>
           <article className="grid grid-cols-2 mx-10 my-16">
-            <div className="w-[44rem] h-[42rem] bg-black dark:bg-neutral-200"></div>
+            <div className="w-[44rem] h-[42rem] bg-black dark:bg-neutral-200 relative">
+              <Image width={1000} height={1000} src="/arno-senoner-ZT16YkAYueo-unsplash.jpg" className="absolute w-full h-full object-cover"/>
+            </div>
               <article>
                 {starteds && (
                   <div>

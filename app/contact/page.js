@@ -17,10 +17,10 @@ const Contact = () => {
                     <h2 className="capitalize font-bold text-3xl">Contact info</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo nostrum dolores eveniet aspernatur voluptatem nisi!</p>
                     <div className="grid grid-cols-2 grid-rows-2">
-                        <h3>Office</h3>
-                        <h3 className="underline">Management</h3>
+                        <h3 className="font-bold text-xl">Office</h3>
+                        <h3 className="underline font-bold text-xl">Management</h3>
                         <p className="capitalize">730 glenstone ave 65802, springfield, us</p>
-                        <p className="capitalize underline">730 glenstone ave 65802, springfield, us</p>
+                        <p className="capitalize">730 glenstone ave 65802, springfield, us</p>
                         <p>+123 222 333 44</p>
                         <p>+123 666 777 88</p>
                         <p>+123 222 333 44</p>
